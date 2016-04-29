@@ -907,7 +907,7 @@ function sg_create_config()
             $sg_tag->set("src", $src[F_NAME], "", $src[F_DESCRIPTION]);
 
             # separate IP, domains, usernames
-            if (strpos(trim($src[F_SOURCE]), 'ldapusersearch') === false) {
+            if ((strpos(trim($src[F_SOURCE]), 'ldapusersearch') === false) && (strpos(trim($src[F_SOURCE]), 'userlist') === false)) {
                 $tsrc = explode(" ", trim($src[F_SOURCE]));
                 foreach($tsrc as $sr) {
                         $sr = trim($sr);
